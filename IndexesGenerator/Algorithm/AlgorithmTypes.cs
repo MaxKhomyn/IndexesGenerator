@@ -11,7 +11,7 @@ namespace IndexesGenerator.Algorithm
         {
             Types = new Dictionary<AlgorithmType, Func<IndexesAlgorithm>>();
 
-            Types.Add(AlgorithmType.Squere, GetSquareAlgorithm);
+            Types.Add(AlgorithmType.Square, GetSquareAlgorithm);
             Types.Add(AlgorithmType.Snake, GetSnakeAlgorithm);
         }
 

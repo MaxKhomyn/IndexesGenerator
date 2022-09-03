@@ -9,7 +9,7 @@
     public enum AlgorithmType
     {
         Snake,
-        Squere,
+        Square,
     }
 
     public enum AlgorithmDirection
