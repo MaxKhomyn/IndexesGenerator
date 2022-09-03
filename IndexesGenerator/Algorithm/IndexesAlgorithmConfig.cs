@@ -1,6 +1,6 @@
-﻿namespace IndexesGenerator
+﻿namespace IndexesGenerator.Algorithm
 {
-    internal class IndexesAlgorithmConfig
+    public class IndexesAlgorithmConfig
     {
         public Position Start { get; set; }
         public Position End { get; set; }
@@ -8,6 +8,6 @@
         public int Width { get; set; }
         public int Height { get; set; }
 
-        public Algorithm Algorithm { get; set; }
+        public AlgorithmThrough Through { get; set; }
     }
 }

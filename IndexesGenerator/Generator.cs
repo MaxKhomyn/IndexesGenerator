@@ -1,16 +1,11 @@
-﻿using System;
+﻿using IndexesGenerator.Algorithm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace IndexesGenerator
 {
-    internal class GeneratorConfig : IndexesAlgorithmConfig
-    {
-        public AlgorithmType AlgorithmType { get; set; }
-        public AlgorithmDirection AlgorithmDirection { get; set; }
-    }
-
-    internal class Generator
+    public class Generator
     {
         protected readonly Dictionary<AlgorithmType, Func<IndexesAlgorithm>> AlgorithmTypes;
 
@@ -30,7 +25,7 @@ namespace IndexesGenerator
         {
             try
             {
-                var algorithmType = AlgorithmTypes[config.AlgorithmType];
+                var algorithmType = AlgorithmTypes[config.Type];
 
                 return algorithmType().Generate(config);
             }
@@ -49,7 +44,7 @@ namespace IndexesGenerator
 
             var enumerable = GenerateIndexes(config);
 
-            var isReverse = config.AlgorithmDirection == AlgorithmDirection.Reverse;
+            var isReverse = config.Direction == AlgorithmDirection.Reverse;
 
             if (isReverse)
             {

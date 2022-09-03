@@ -1,4 +1,4 @@
-﻿namespace IndexesGenerator
+﻿namespace IndexesGenerator.Algorithm
 {
     public class Position
     {

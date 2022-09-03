@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IndexesGenerator
+namespace IndexesGenerator.Algorithm
 {
-    internal delegate IEnumerable<Position> IndexesAlgorithmFunc(IndexesAlgorithmConfig config);
+    public delegate IEnumerable<Position> IndexesAlgorithmFunc(IndexesAlgorithmConfig config);
 
-    internal class IndexesAlgorithm
+    public class IndexesAlgorithm
     {
-        protected readonly Dictionary<Algorithm, IndexesAlgorithmFunc> Algorithms;
+        protected readonly Dictionary<AlgorithmThrough, IndexesAlgorithmFunc> Algorithms;
 
         public IndexesAlgorithm()
         {
-            Algorithms = new Dictionary<Algorithm, IndexesAlgorithmFunc>();
+            Algorithms = new Dictionary<AlgorithmThrough, IndexesAlgorithmFunc>();
         }
 
         public IEnumerable<Position> Generate(IndexesAlgorithmConfig config)
@@ -23,7 +23,7 @@ namespace IndexesGenerator
 
             try
             {
-                var algorithm = Algorithms[config.Algorithm];
+                var algorithm = Algorithms[config.Through];
 
                 return algorithm(config);
             }

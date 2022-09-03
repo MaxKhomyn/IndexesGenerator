@@ -1,6 +1,6 @@
-﻿namespace IndexesGenerator
+﻿namespace IndexesGenerator.Algorithm
 {
-    public enum Algorithm
+    public enum AlgorithmThrough
     {
         ByRows,
         ByColumns,

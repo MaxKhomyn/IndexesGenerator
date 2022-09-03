@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndexesGenerator.Algorithm;
+using System;
 
 namespace IndexesGenerator
 {
@@ -14,9 +15,9 @@ namespace IndexesGenerator
                 End = new Position(2, 3),
                 Height = 4,
                 Width = 5,
-                Algorithm = Algorithm.ByRows,
-                AlgorithmType = AlgorithmType.Snake,
-                AlgorithmDirection = AlgorithmDirection.Reverse
+                Through = AlgorithmThrough.ByRows,
+                Type = AlgorithmType.Snake,
+                Direction = AlgorithmDirection.Reverse
             };
 
             foreach (var item in generator.Generate(config))
