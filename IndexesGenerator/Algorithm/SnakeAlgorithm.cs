@@ -10,13 +10,22 @@ namespace IndexesGenerator.Algorithm
             Algorithms.Add(AlgorithmThrough.ByColumns, ByColumns);
         }
 
+        private int StartFrom(int iterator, int x, int y) =>
+            iterator > x ? 0 : y;
+
+        private bool EndWhen(int x, int y, Position position, int size) =>
+            y <= (x != position.X ? size - 1 : position.Y);
+
         private IEnumerable<Position> ByRows(IndexesAlgorithmConfig config)
         {
             for (int x = config.Start.X; x <= config.End.X; x++)
             {
-                for (int y = x > config.Start.X ? 0 : config.Start.Y; y <= (x != config.End.X ? config.Width - 1 : config.End.Y); y++)
+                int y = StartFrom(x, config.Start.X, config.Start.Y);
+
+                while (EndWhen(x, y, config.End, config.Width))
                 {
                     yield return new Position(x, y);
+                    y++;
                 }
             }
         }
@@ -25,9 +34,12 @@ namespace IndexesGenerator.Algorithm
         {
             for (int y = config.Start.Y; y <= config.End.Y; y++)
             {
-                for (int x = y > config.Start.Y ? 0 : config.Start.X; x <= (y != config.End.Y ? config.Height - 1 : config.End.X); x++)
+                int x = StartFrom(y, config.Start.Y, config.Start.X);
+
+                while (EndWhen(y, x, new Position(config.End.Y, config.End.X), config.Height))
                 {
                     yield return new Position(x, y);
+                    x++;
                 }
             }
         }
