@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32630.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexesGenerator", "IndexesGenerator\IndexesGenerator.csproj", "{7B230E1B-164A-4910-A9DB-DFDE9A66A90C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexesGenerator.UnitTests", "IndexesGenerator.UnitTests\IndexesGenerator.UnitTests.csproj", "{32615A35-9B6B-4D7E-9952-3F3955177C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7B230E1B-164A-4910-A9DB-DFDE9A66A90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B230E1B-164A-4910-A9DB-DFDE9A66A90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B230E1B-164A-4910-A9DB-DFDE9A66A90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32615A35-9B6B-4D7E-9952-3F3955177C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32615A35-9B6B-4D7E-9952-3F3955177C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32615A35-9B6B-4D7E-9952-3F3955177C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32615A35-9B6B-4D7E-9952-3F3955177C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

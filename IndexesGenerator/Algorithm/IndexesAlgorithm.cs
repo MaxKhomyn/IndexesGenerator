@@ -5,7 +5,7 @@ namespace IndexesGenerator.Algorithm
 {
     public delegate IEnumerable<Position> IndexesAlgorithmFunc(IndexesAlgorithmConfig config);
 
-    public class IndexesAlgorithm
+    public abstract class IndexesAlgorithm
     {
         protected readonly Dictionary<AlgorithmThrough, IndexesAlgorithmFunc> Algorithms;
 

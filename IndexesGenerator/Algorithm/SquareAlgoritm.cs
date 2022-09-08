@@ -4,11 +4,13 @@ namespace IndexesGenerator.Algorithm
 {
     internal class SquareAlgorithm : IndexesAlgorithm
     {
-        public SquareAlgorithm()
+        protected SquareAlgorithm()
         {
             Algorithms.Add(AlgorithmThrough.ByRows, ByRows);
             Algorithms.Add(AlgorithmThrough.ByColumns, ByColumns);
         }
+
+        public static SquareAlgorithm GetNewInstance() => new SquareAlgorithm();
 
         private IEnumerable<Position> ByRows(IndexesAlgorithmConfig config)
         {

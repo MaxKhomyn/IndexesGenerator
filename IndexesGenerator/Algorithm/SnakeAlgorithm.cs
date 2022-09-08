@@ -4,11 +4,13 @@ namespace IndexesGenerator.Algorithm
 {
     internal class SnakeAlgorithm : IndexesAlgorithm
     {
-        public SnakeAlgorithm() : base()
+        protected SnakeAlgorithm() : base()
         {
             Algorithms.Add(AlgorithmThrough.ByRows, ByRows);
             Algorithms.Add(AlgorithmThrough.ByColumns, ByColumns);
         }
+
+        public static SnakeAlgorithm GetNewInstance() => new SnakeAlgorithm();
 
         private int StartFrom(int iterator, int x, int y) =>
             iterator > x ? 0 : y;

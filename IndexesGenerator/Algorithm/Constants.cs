@@ -8,6 +8,7 @@
 
     public enum AlgorithmType
     {
+        None,
         Snake,
         Square,
     }
