@@ -14,6 +14,22 @@ namespace IndexesGenerator
                 throw new ArgumentNullException("config - can not be null");
             }
 
+            if (config.Start == config.End)
+            {
+                return new[] { config.Start };
+            }
+
+            if (config.Start > config.End)
+            {
+                var temp = config.Start;
+                config.Start = config.End;
+                config.End = temp;
+
+                config.Direction = config.Direction == AlgorithmDirection.Normal ?
+                    AlgorithmDirection.Reverse :
+                    AlgorithmDirection.Normal;
+            }
+
             var algorithmTypes = new AlgorithmTypes();
 
             var enumerable = algorithmTypes
