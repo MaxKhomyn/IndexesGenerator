@@ -4,7 +4,6 @@ namespace IndexesGenerator
 {
     public class GeneratorConfig : IndexesAlgorithmConfig
     {
-        public AlgorithmType Type { get; set; }
-        public AlgorithmDirection Direction { get; set; }
+        public AlgorithmType Type { get; init; }
     }
 }

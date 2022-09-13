@@ -11,7 +11,9 @@ namespace IndexesGenerator.UnitTests
         {
             var generator = new Generator();
 
-            var actual = generator.Generate(input).ToList();
+            var actual = generator
+                .Generate(input)
+                .ToList();
 
             for (int i = 0; i < actual.Count; i++)
             {

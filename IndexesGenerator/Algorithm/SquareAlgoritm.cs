@@ -2,15 +2,15 @@
 
 namespace IndexesGenerator.Algorithm
 {
-    internal class SquareAlgorithm : IndexesAlgorithm
+    internal sealed class SquareAlgorithm : IndexesAlgorithm
     {
-        protected SquareAlgorithm()
+        private SquareAlgorithm()
         {
             Algorithms.Add(AlgorithmThrough.ByRows, ByRows);
             Algorithms.Add(AlgorithmThrough.ByColumns, ByColumns);
         }
 
-        public static SquareAlgorithm GetNewInstance() => new SquareAlgorithm();
+        public static SquareAlgorithm GetNewInstance() => new();
 
         /// <summary>
         /// Iterate Indexes from start position to end position by rows. Can only increment position. Start position should be grater then end position

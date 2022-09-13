@@ -5,21 +5,22 @@ namespace IndexesGenerator.Algorithm
 {
     internal class AlgorithmTypes
     {
-        protected readonly Dictionary<AlgorithmType, Func<IndexesAlgorithm>> Types;
+        private readonly Dictionary<AlgorithmType, Func<IndexesAlgorithm>> _types;
 
         public AlgorithmTypes()
         {
-            Types = new Dictionary<AlgorithmType, Func<IndexesAlgorithm>>();
-
-            Types.Add(AlgorithmType.Square, SquareAlgorithm.GetNewInstance);
-            Types.Add(AlgorithmType.Snake, SnakeAlgorithm.GetNewInstance);
+            _types = new Dictionary<AlgorithmType, Func<IndexesAlgorithm>>
+            {
+                { AlgorithmType.Square, SquareAlgorithm.GetNewInstance },
+                { AlgorithmType.Snake, SnakeAlgorithm.GetNewInstance }
+            };
         }
 
         public IndexesAlgorithm GetAlgorithm(AlgorithmType type)
         {
             try
             {
-                return Types[type]();
+                return _types[type]();
             }
             catch (KeyNotFoundException)
             {

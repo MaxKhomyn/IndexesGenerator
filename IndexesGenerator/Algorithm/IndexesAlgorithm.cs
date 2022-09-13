@@ -9,7 +9,7 @@ namespace IndexesGenerator.Algorithm
     {
         protected readonly Dictionary<AlgorithmThrough, IndexesAlgorithmFunc> Algorithms;
 
-        public IndexesAlgorithm()
+        protected IndexesAlgorithm()
         {
             Algorithms = new Dictionary<AlgorithmThrough, IndexesAlgorithmFunc>();
         }
@@ -18,7 +18,7 @@ namespace IndexesGenerator.Algorithm
         {
             if (config is null)
             {
-                throw new ArgumentNullException("config - can not be null");
+                throw new ArgumentNullException(nameof(config));
             }
 
             try
@@ -29,7 +29,7 @@ namespace IndexesGenerator.Algorithm
             }
             catch (KeyNotFoundException)
             {
-                throw new ArgumentException("Could not define Algorithm");
+                throw new ArgumentException("Could not define Algorithm.");
             }
         }
     }

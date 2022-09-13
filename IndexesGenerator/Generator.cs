@@ -11,7 +11,7 @@ namespace IndexesGenerator
         {
             if (config is null)
             {
-                throw new ArgumentNullException("config - can not be null");
+                throw new ArgumentNullException(nameof(config));
             }
 
             if (config.Start == config.End)
@@ -19,15 +19,11 @@ namespace IndexesGenerator
                 return new[] { config.Start };
             }
 
-            if (config.Start > config.End)
-            {
-                var temp = config.Start;
-                config.Start = config.End;
-                config.End = temp;
+            var isReverse = config.Start > config.End;
 
-                config.Direction = config.Direction == AlgorithmDirection.Normal ?
-                    AlgorithmDirection.Reverse :
-                    AlgorithmDirection.Normal;
+            if (isReverse)
+            {
+                (config.Start, config.End) = (config.End, config.Start);
             }
 
             var algorithmTypes = new AlgorithmTypes();
@@ -35,8 +31,6 @@ namespace IndexesGenerator
             var enumerable = algorithmTypes
                 .GetAlgorithm(config.Type)
                 .Generate(config);
-
-            var isReverse = config.Direction == AlgorithmDirection.Reverse;
 
             if (isReverse)
             {

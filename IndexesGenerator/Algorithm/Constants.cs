@@ -12,10 +12,4 @@
         Snake,
         Square,
     }
-
-    public enum AlgorithmDirection
-    {
-        Normal,
-        Reverse,
-    }
 }

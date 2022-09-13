@@ -2,15 +2,15 @@
 
 namespace IndexesGenerator.Algorithm
 {
-    internal class SnakeAlgorithm : IndexesAlgorithm
+    internal sealed class SnakeAlgorithm : IndexesAlgorithm
     {
-        protected SnakeAlgorithm() : base()
+        private SnakeAlgorithm() : base()
         {
             Algorithms.Add(AlgorithmThrough.ByRows, ByRows);
             Algorithms.Add(AlgorithmThrough.ByColumns, ByColumns);
         }
 
-        public static SnakeAlgorithm GetNewInstance() => new SnakeAlgorithm();
+        public static SnakeAlgorithm GetNewInstance() => new();
 
         private int StartFrom(int iterator, int x, int y) =>
             iterator > x ? 0 : y;
